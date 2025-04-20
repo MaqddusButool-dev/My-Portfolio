@@ -50,7 +50,7 @@ function TypingEffect() {
 function HomePage() {
   return (
     <section id="home" className="bg-[#121212] text-[#EAEAEA] px-4 py-20 sm:py-28 md:py-32 lg:py-40">
-      <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="max-w-[1200px] mx-auto flex flex-col-reverse lg:grid lg:grid-cols-2 gap-16 items-center">
         
         {/* Text Content */}
         <motion.div
