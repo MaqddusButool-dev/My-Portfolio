@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoClose } from "react-icons/io5";
+// #import app.css file
+import "../../../src/App.css";
 
 const menuItems = [
   { name: "Home", id: "home" },
