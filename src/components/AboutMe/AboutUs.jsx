@@ -22,9 +22,9 @@ export default function About() {
       initial={{ opacity: 0, y: 100 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="bg-white text-[#333]"
+      className="bg-white text-[#333] "
     >
-      <div className="flex flex-col items-center justify-center py-16 px-6 lg:px-20 max-w-7xl mx-auto">
+      <div className="flex flex-col items-center justify-center py-16 px-6 lg:px-20 max-w-7xl mx-auto ">
         {/* Section Heading */}
         <motion.header
           initial={{ opacity: 0, y: -50 }}

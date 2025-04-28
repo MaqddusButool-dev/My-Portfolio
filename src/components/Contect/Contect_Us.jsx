@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 const Contact = () => {
   return (
-    <section className="bg-[#121212] py-16 px-4 text-[#EAEAEA]" id="contact">
+    <section className="bg-[#121212] py-16 px-4 text-[#EAEAEA] " id="contact">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: -30 }}

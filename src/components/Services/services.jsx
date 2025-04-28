@@ -38,7 +38,7 @@ export default function Services() {
     <motion.section
       id="services"
       ref={ref}
-      className="bg-[#121212] text-[#EAEAEA] py-20 px-5"
+      className="bg-[#121212] text-[#EAEAEA] py-20 px-5 "
       initial={{ opacity: 0, y: 100 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8, ease: "easeOut" }}

@@ -8,7 +8,7 @@ const Footer = () => {
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="bg-[#121212] text-[#EAEAEA] py-10 px-4 shadow-[0_-10px_20px_-5px_rgba(255,255,255,0.1)]"
+      className="bg-[#121212] text-[#EAEAEA] py-10 px-4  shadow-[0_-10px_20px_-5px_rgba(255,255,255,0.1)]"
     >
       {/* Divider line to separate from section above */}
       {/* <div className="h-1 bg-gradient-to-r from-[#FF3B3B] via-[#ffffff1a] to-[#FF3B3B] mb-6 rounded-full w-3/4 mx-auto" /> */}

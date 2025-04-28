@@ -80,7 +80,7 @@ const Projects = () => {
         initial={{ opacity: 0, y: 100 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="bg-white py-20 px-4"
+        className="bg-white py-20 px-4 "
       >
         <div className="max-w-6xl mx-auto text-center">
           <motion.h1
