@@ -3,7 +3,7 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { Dialog } from "@headlessui/react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { assets } from "../../assets/assets";
-import { X } from "lucide-react"; 
+import { X } from "lucide-react";
 
 const projects = [
   {
@@ -28,14 +28,16 @@ const projects = [
       assets.inventory10,
       assets.inventory11,
     ],
-    // githubUrl: "https://github.com/MaqddusButool-dev/Invetory_Management_System.git",
-    // liveDemoUrl: "https://code-summarizer.vercel.app",
+    githubUrl:
+      "https://github.com/MaqddusButool-dev/ARMSSTEEL_Invetory_Management_System",
+    liveDemoUrl: "https://github.com/MaqddusButool-dev/ARMSSTEEL_Invetory_Management_System/blob/main/run_ims.bat",
   },
   {
     title: "Portfolio Website",
-    shortDescription: "Personal portfolio with Nextjs A modern and responsive personal portfolio website built with Next.js  to showcase my skills, projects, and experience.",
+    shortDescription:
+      "Personal portfolio with Nextjs A modern and responsive personal portfolio website built with Next.js  to showcase my skills, projects, and experience.",
     detailedDescription:
-    "This project is a fully responsive and SEO-friendly personal portfolio website designed and developed using Next.js and React. It features a clean UI, smooth navigation, dark/light mode toggle, and animated transitions. The site includes sections for an about me, skills, featured projects, and a contact form. It's optimized for performance and deployable with platforms like Vercel. This portfolio not only highlights my technical skills but also serves as a platform to connect with potential collaborators and employers.",
+      "This project is a fully responsive and SEO-friendly personal portfolio website designed and developed using Next.js and React. It features a clean UI, smooth navigation, dark/light mode toggle, and animated transitions. The site includes sections for an about me, skills, featured projects, and a contact form. It's optimized for performance and deployable with platforms like Vercel. This portfolio not only highlights my technical skills but also serves as a platform to connect with potential collaborators and employers.",
     image: assets.portfolio,
     screenshots: [
       assets.portfolio1,
@@ -43,23 +45,28 @@ const projects = [
       assets.portfolio3,
       assets.portfolio4,
       assets.portfolio5,
-      assets.portfolio6
+      assets.portfolio6,
     ],
-    githubUrl: "https://github.com/your-username/portfolio",
-    liveDemoUrl: "https://your-portfolio.vercel.app",
+    githubUrl: "https://github.com/MaqddusButool-dev/portfolio",
+    liveDemoUrl: "https://maqddusbutool.vercel.app/",
   },
   {
-    title: "Task Manager",
-    shortDescription: "Manage tasks and collaborate.",
+    title: "Business Website",
+    shortDescription:
+      "I designed a clean and responsive website for Arms Steel Company to showcase their steel products and company profile.",
     detailedDescription:
-      "A task management web app that supports real-time collaboration. Users can create, update, and track tasks in shared boards with a modern UI.",
-    image: "/images/project3.png",
+      "I developed a responsive and modern business website for Arms Steel Company using Next.js and TypeScript. The website is designed to professionally showcase the company’s profile and a variety of steel products. It includes a clean homepage with a company overview, a dynamic product display section, and a fully functional contact form integrated with the Gmail API for real-time message handling. Tailwind CSS was used for styling to ensure a fast and consistent UI across all devices. This project allowed me to apply my frontend and backend skills in a real-world business setting.",
+    image: assets.armfront,
     screenshots: [
-      "/images/project3-screen1.png",
-      "/images/project3-screen2.png",
+      assets.arms1,
+      assets.arms2,
+      assets.arms3,
+      assets.arms4,
+      assets.arms5,
+      assets.arms6,
     ],
-    githubUrl: "https://github.com/your-username/task-manager",
-    liveDemoUrl: "https://task-manager.vercel.app",
+    githubUrl: "https://github.com/MaqddusButool-dev/ARMS_STEEL_WEBSITE",
+    liveDemoUrl: "https://arms-steel-website.vercel.app/",
   },
 ];
 
@@ -129,33 +136,117 @@ const Projects = () => {
                     <h3 className="text-[#EAEAEA] text-xl font-semibold">
                       {project.title}
                     </h3>
-
+                    {/* <div className="flex gap-2">
+                      {project.githubUrl && (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          title="GitHub Repository"
+                          onClick={(e) => e.stopPropagation()}
+                          className="flex items-center gap-1 px-3 py-1.5 bg-[#333333] text-white text-sm rounded-md hover:bg-[#444444] transition"
+                        >
+                          <FaGithub className="w-4 h-4" />
+                          GitHub
+                        </a>
+                      )}
+                      {project.liveDemoUrl && (
+                        <a
+                          href={project.liveDemoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          title="Live Demo"
+                          onClick={(e) => e.stopPropagation()}
+                          className="flex items-center gap-1 px-3 py-1.5 bg-[#FF3B3B] text-white text-sm rounded-md hover:bg-[#e32e2e] transition"
+                        >
+                          <FaExternalLinkAlt className="w-4 h-4" />
+                          Live Demo
+                        </a>
+                      )}
+                    </div> */}
                   </div>
+
                   <p className="text-[#A1A1A1] text-sm">
                     {project.shortDescription}
                   </p>
 
-                  <button
-                onClick={() => setSelectedProject(project)}
-                className="text-sm text-[#E63946] hover:underline flex items-center gap-1 mt-3 font-Ovo"
-              >
-                View Project
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="w-5 h-5"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-                  />
-                </svg>
-              </button>
+                  {/* <button
+                    onClick={() => setSelectedProject(project)}
+                    className="text-sm text-[#E63946] hover:underline flex items-center gap-1 mt-3 font-Ovo"
+                  >
+                    View Project
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-5 h-5"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+                      />
+                    </svg>
+                  </button> */}
+                  <div className="flex flex-wrap items-center justify-between mt-4 gap-2">
 
+                  <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setActiveProject(project); 
+                      }}
+                      className="text-sm text-[#E63946] hover:underline flex items-center gap-1 font-medium"
+                    >
+                      View Project
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={1.5}
+                        stroke="currentColor"
+                        className="w-5 h-5"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+                        />
+                      </svg>
+                    </button>
+                    
+                    <div className="flex gap-2">
+                      {project.githubUrl && (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          title="GitHub Repository"
+                          onClick={(e) => e.stopPropagation()}
+                          className="flex items-center gap-1 px-3 py-1.5 bg-[#333333] text-white text-sm rounded-md hover:bg-[#444444] transition"
+                        >
+                          <FaGithub className="w-4 h-4" />
+                          GitHub
+                        </a>
+                      )}
+                      {project.liveDemoUrl && (
+                        <a
+                          href={project.liveDemoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          title="Live Demo"
+                          onClick={(e) => e.stopPropagation()}
+                          className="flex items-center gap-1 px-3 py-1.5 bg-[#FF3B3B] text-white text-sm rounded-md hover:bg-[#e32e2e] transition"
+                        >
+                          <FaExternalLinkAlt className="w-4 h-4" />
+                          Live Demo
+                        </a>
+                      )}
+                    </div>
+
+                    
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -214,6 +305,30 @@ const Projects = () => {
               <p className="text-[#A1A1A1] mb-6">
                 {activeProject.detailedDescription}
               </p>
+              <div className="flex gap-4 mb-6">
+                {activeProject.githubUrl && (
+                  <a
+                    href={activeProject.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-sm text-white bg-[#333] hover:bg-[#444] px-4 py-2 rounded-md transition-all"
+                  >
+                    <FaGithub className="w-4 h-4" />
+                    GitHub
+                  </a>
+                )}
+                {activeProject.liveDemoUrl && (
+                  <a
+                    href={activeProject.liveDemoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-sm text-white bg-[#FF3B3B] hover:bg-[#e12c2c] px-4 py-2 rounded-md transition-all"
+                  >
+                    <FaExternalLinkAlt className="w-4 h-4" />
+                    Live Demo
+                  </a>
+                )}
+              </div>
 
               {/* <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {activeProject.screenshots.map((src, index) => (
@@ -277,23 +392,6 @@ const Projects = () => {
 };
 
 export default Projects;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import React, { useState, useRef } from "react";
 // import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";

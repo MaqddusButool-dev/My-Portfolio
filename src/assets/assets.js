@@ -20,6 +20,14 @@ import portfolio4 from "./portfolio4.png"
 import portfolio5 from "./portfolio5.png"
 import portfolio6 from "./portfolio6.png"
 import portfolio from "./portfolio.png"
+import arms1 from "./arms1.png"
+import arms2 from "./arms2.png"
+import arms3 from "./arm3.png" 
+import arms4 from "./arm4.png"
+import arms5 from "./arm5.png"
+import arms6 from "./arm6.png"
+import armfront from "./armfront.png"
+
 
 
 export const assets ={
@@ -45,6 +53,13 @@ export const assets ={
     portfolio4,
     portfolio5,
     portfolio6,
+    arms1,
+    arms2,
+    arms3,
+    arms4,
+    arms5,
+    arms6,
+    armfront
     
 
 
