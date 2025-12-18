@@ -6,9 +6,9 @@ import { assets } from "../../assets/assets";
 
 const roles = [
   "Full Stack Developer",
-  "Frontend Developer",
+  "Frontend Engineer",
   "Backend Developer",
-  
+  "Python Developer",
 ];
 
 // Typing effect with cursor
@@ -60,17 +60,6 @@ function HomePage() {
       id="home"
       className="relative min-h-screen flex items-center overflow-hidden pt-16 sm:pt-20 pb-8 sm:pb-12 bg-[#E9EFEC]"
     >
-      {/* Subtle background pattern */}
-      <div className="absolute inset-0 opacity-30 sm:opacity-40">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, #C4DAD2 1px, transparent 0)`,
-            backgroundSize: "30px 30px",
-          }}
-        />
-      </div>
-
       {/* Decorative lines - Hidden on mobile */}
       <div className="absolute inset-0 pointer-events-none hidden sm:block">
         <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-[#6A9C89]/20 to-transparent" />

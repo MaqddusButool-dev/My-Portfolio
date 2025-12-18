@@ -3,11 +3,19 @@
 /* Root variables for consistent sizing */
 :root {
   --nav-height: 64px;
+  --bottom-nav-height: 70px;
 }
 
 @media (min-width: 640px) {
   :root {
     --nav-height: 72px;
+    --bottom-nav-height: 75px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --bottom-nav-height: 0px;
   }
 }
 
@@ -34,6 +42,13 @@ body {
 #root {
   overflow-x: hidden;
   min-height: 100vh;
+  padding-bottom: var(--bottom-nav-height);
+}
+
+@media (min-width: 1024px) {
+  #root {
+    padding-bottom: 0;
+  }
 }
 
 /* Custom scrollbar for WebKit browsers */
@@ -156,5 +171,18 @@ a, button {
   [role="button"] {
     min-height: 44px;
     min-width: 44px;
+  }
+}
+
+/* Mobile bottom nav safe area support */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  #root {
+    padding-bottom: calc(var(--bottom-nav-height) + env(safe-area-inset-bottom));
+  }
+  
+  @media (min-width: 1024px) {
+    #root {
+      padding-bottom: 0;
+    }
   }
 }

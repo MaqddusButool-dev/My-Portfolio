@@ -70,6 +70,7 @@ const projects = [
     githubUrl: "https://github.com/MaqddusButool-dev/ARMS_STEEL_WEBSITE",
     liveDemoUrl: "https://arms-steel-website.vercel.app/",
   },
+  
 ];
 
 const Projects = () => {
