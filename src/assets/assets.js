@@ -1,6 +1,6 @@
 import HeroImage from "./rani2.jpeg"
 import AboutImage from "./rani1.jpg"
-import Resume from "./maqddusbutool.pdf"
+import Resume from "./Maqddusbutool.pdf"
 import inventery_front from "./Inventory_management_system.png"
 import inventory01 from "./inventory01.png"
 import inventory02 from "./inventory02.png"

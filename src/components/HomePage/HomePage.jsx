@@ -6,9 +6,9 @@ import { assets } from "../../assets/assets";
 
 const roles = [
   "Full Stack Developer",
-  "Frontend Engineer",
+  "Frontend Developer",
   "Backend Developer",
-  "Python Developer",
+  
 ];
 
 // Typing effect with cursor
@@ -58,73 +58,73 @@ function HomePage() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center overflow-hidden pt-20 bg-[#E9EFEC]"
+      className="relative min-h-screen flex items-center overflow-hidden pt-16 sm:pt-20 pb-8 sm:pb-12 bg-[#E9EFEC]"
     >
       {/* Subtle background pattern */}
-      <div className="absolute inset-0 opacity-[0.4]">
+      <div className="absolute inset-0 opacity-30 sm:opacity-40">
         <div
           className="absolute inset-0"
           style={{
             backgroundImage: `radial-gradient(circle at 1px 1px, #C4DAD2 1px, transparent 0)`,
-            backgroundSize: "40px 40px",
+            backgroundSize: "30px 30px",
           }}
         />
       </div>
 
-      {/* Decorative lines */}
-      <div className="absolute inset-0 pointer-events-none">
+      {/* Decorative lines - Hidden on mobile */}
+      <div className="absolute inset-0 pointer-events-none hidden sm:block">
         <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-[#6A9C89]/20 to-transparent" />
         <div className="absolute top-0 right-1/4 w-px h-full bg-gradient-to-b from-transparent via-[#6A9C89]/20 to-transparent" />
       </div>
 
       {/* Decorative blur circles */}
-      <div className="absolute top-20 right-10 w-72 h-72 bg-[#6A9C89]/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-10 w-96 h-96 bg-[#16423C]/10 rounded-full blur-3xl" />
+      <div className="absolute top-20 right-10 w-48 sm:w-72 h-48 sm:h-72 bg-[#6A9C89]/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 left-10 w-64 sm:w-96 h-64 sm:h-96 bg-[#16423C]/10 rounded-full blur-3xl" />
 
-      {/* Subtle corner accents */}
-      <div className="absolute top-0 left-0 w-32 h-32">
-        <div className="absolute top-8 left-8 w-16 h-px bg-[#6A9C89]/40" />
-        <div className="absolute top-8 left-8 w-px h-16 bg-[#6A9C89]/40" />
+      {/* Corner accents - Hidden on mobile */}
+      <div className="absolute top-0 left-0 w-24 sm:w-32 h-24 sm:h-32 hidden sm:block">
+        <div className="absolute top-6 sm:top-8 left-6 sm:left-8 w-12 sm:w-16 h-px bg-[#6A9C89]/40" />
+        <div className="absolute top-6 sm:top-8 left-6 sm:left-8 w-px h-12 sm:h-16 bg-[#6A9C89]/40" />
       </div>
-      <div className="absolute top-0 right-0 w-32 h-32">
-        <div className="absolute top-8 right-8 w-16 h-px bg-[#6A9C89]/40" />
-        <div className="absolute top-8 right-8 w-px h-16 bg-[#6A9C89]/40" />
+      <div className="absolute top-0 right-0 w-24 sm:w-32 h-24 sm:h-32 hidden sm:block">
+        <div className="absolute top-6 sm:top-8 right-6 sm:right-8 w-12 sm:w-16 h-px bg-[#6A9C89]/40" />
+        <div className="absolute top-6 sm:top-8 right-6 sm:right-8 w-px h-12 sm:h-16 bg-[#6A9C89]/40" />
       </div>
-      <div className="absolute bottom-0 left-0 w-32 h-32">
-        <div className="absolute bottom-8 left-8 w-16 h-px bg-[#6A9C89]/40" />
-        <div className="absolute bottom-8 left-8 w-px h-16 bg-[#6A9C89]/40" />
+      <div className="absolute bottom-0 left-0 w-24 sm:w-32 h-24 sm:h-32 hidden sm:block">
+        <div className="absolute bottom-6 sm:bottom-8 left-6 sm:left-8 w-12 sm:w-16 h-px bg-[#6A9C89]/40" />
+        <div className="absolute bottom-6 sm:bottom-8 left-6 sm:left-8 w-px h-12 sm:h-16 bg-[#6A9C89]/40" />
       </div>
-      <div className="absolute bottom-0 right-0 w-32 h-32">
-        <div className="absolute bottom-8 right-8 w-16 h-px bg-[#6A9C89]/40" />
-        <div className="absolute bottom-8 right-8 w-px h-16 bg-[#6A9C89]/40" />
+      <div className="absolute bottom-0 right-0 w-24 sm:w-32 h-24 sm:h-32 hidden sm:block">
+        <div className="absolute bottom-6 sm:bottom-8 right-6 sm:right-8 w-12 sm:w-16 h-px bg-[#6A9C89]/40" />
+        <div className="absolute bottom-6 sm:bottom-8 right-6 sm:right-8 w-px h-12 sm:h-16 bg-[#6A9C89]/40" />
       </div>
 
-      <div className="relative z-10 w-full max-w-[1200px] mx-auto px-8 lg:px-16">
-        <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-16">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-16">
+        <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-8 sm:gap-12 lg:gap-16">
           
           {/* Text Section */}
           <motion.div
-            className="flex-1 text-center lg:text-left"
+            className="flex-1 text-center lg:text-left w-full"
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             {/* Small intro line */}
             <motion.div
-              className="flex items-center justify-center lg:justify-start gap-3 mb-6"
+              className="flex items-center justify-center lg:justify-start gap-2 sm:gap-3 mb-4 sm:mb-6"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
             >
-              <div className="w-8 h-px bg-[#6A9C89]" />
-              <span className="text-sm text-[#6A9C89] uppercase tracking-[0.2em] font-light">
+              <div className="w-6 sm:w-8 h-px bg-[#16423C]" />
+              <span className="text-xs sm:text-sm text-[#16423C] uppercase tracking-[0.15em] sm:tracking-[0.2em] font-medium">
                 Welcome
               </span>
             </motion.div>
 
             {/* Greeting */}
             <motion.p
-              className="text-lg md:text-xl text-[#6A9C89] font-light mb-4"
+              className="text-base sm:text-lg md:text-xl text-[#16423C] font-medium mb-2 sm:mb-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
@@ -134,7 +134,7 @@ function HomePage() {
             
             {/* Name */}
             <motion.h1
-              className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-4"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-2 sm:mb-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
@@ -145,7 +145,7 @@ function HomePage() {
 
             {/* Role */}
             <motion.h2
-              className="text-xl md:text-2xl font-medium text-[#16423C] mb-6 h-8"
+              className="text-lg sm:text-xl md:text-2xl font-medium text-[#16423C] mb-4 sm:mb-6 min-h-[28px] sm:min-h-[32px]"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
@@ -155,7 +155,7 @@ function HomePage() {
 
             {/* Divider */}
             <motion.div 
-              className="w-20 h-px bg-gradient-to-r from-[#6A9C89] to-transparent mx-auto lg:mx-0 mb-6"
+              className="w-16 sm:w-20 h-px bg-gradient-to-r from-[#16423C] to-transparent mx-auto lg:mx-0 mb-4 sm:mb-6"
               initial={{ width: 0 }}
               animate={{ width: 80 }}
               transition={{ delay: 0.7, duration: 0.5 }}
@@ -163,7 +163,7 @@ function HomePage() {
 
             {/* Description */}
             <motion.p
-              className="text-[#16423C]/70 max-w-md mx-auto lg:mx-0 leading-relaxed mb-8"
+              className="text-sm sm:text-base text-[#16423C]/80 max-w-md mx-auto lg:mx-0 leading-relaxed mb-6 sm:mb-8 px-4 sm:px-0"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.7 }}
@@ -174,7 +174,7 @@ function HomePage() {
 
             {/* Social Icons */}
             <motion.div
-              className="flex justify-center lg:justify-start gap-4 mb-8"
+              className="flex justify-center lg:justify-start gap-3 sm:gap-4 mb-6 sm:mb-8"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8 }}
@@ -190,25 +190,25 @@ function HomePage() {
                   href={link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 flex items-center justify-center rounded-full border border-[#C4DAD2] hover:border-[#6A9C89] hover:bg-[#6A9C89]/10 transition-all duration-300 group"
+                  className="w-9 sm:w-10 h-9 sm:h-10 flex items-center justify-center rounded-full border border-[#16423C]/30 hover:border-[#16423C] hover:bg-[#16423C]/10 transition-all duration-300 group"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Icon className="text-[#16423C] group-hover:text-[#6A9C89] transition-colors" />
+                  <Icon className="text-sm sm:text-base text-[#16423C] group-hover:text-[#16423C] transition-colors" />
                 </motion.a>
               ))}
             </motion.div>
 
             {/* CTA Buttons */}
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start px-4 sm:px-0"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.9 }}
             >
               <motion.a
                 href="#work"
-                className="px-8 py-3 bg-[#6A9C89] text-white font-medium rounded hover:bg-[#5a8a79] transition-colors duration-300"
+                className="px-6 sm:px-8 py-2.5 sm:py-3 bg-[#16423C] text-white text-sm sm:text-base font-medium rounded hover:bg-[#1a524a] transition-colors duration-300 text-center"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -217,7 +217,7 @@ function HomePage() {
               
               <motion.a
                 href={assets.Resume}
-                className="px-8 py-3 border border-[#6A9C89] text-[#16423C] font-medium rounded hover:bg-[#6A9C89] hover:text-white transition-all duration-300 flex items-center justify-center gap-2"
+                className="px-6 sm:px-8 py-2.5 sm:py-3 border border-[#16423C] text-[#16423C] text-sm sm:text-base font-medium rounded hover:bg-[#16423C] hover:text-white transition-all duration-300 flex items-center justify-center gap-2"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -231,28 +231,28 @@ function HomePage() {
 
           {/* Image Section */}
           <motion.div
-            className="relative"
+            className="relative flex-shrink-0"
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            {/* Decorative frame */}
-            <div className="absolute -inset-4 border border-[#6A9C89]/30 rounded-lg" />
-            <div className="absolute -inset-8 border border-[#6A9C89]/15 rounded-lg" />
+            {/* Decorative frame - Hidden on small mobile */}
+            <div className="absolute -inset-3 sm:-inset-4 border border-[#16423C]/30 rounded-lg hidden xs:block" />
+            <div className="absolute -inset-6 sm:-inset-8 border border-[#16423C]/15 rounded-lg hidden sm:block" />
             
             {/* Green accent corner */}
-            <div className="absolute -top-4 -right-4 w-8 h-8">
-              <div className="absolute top-0 right-0 w-full h-px bg-[#6A9C89]" />
-              <div className="absolute top-0 right-0 w-px h-full bg-[#6A9C89]" />
+            <div className="absolute -top-3 sm:-top-4 -right-3 sm:-right-4 w-6 sm:w-8 h-6 sm:h-8 hidden xs:block">
+              <div className="absolute top-0 right-0 w-full h-px bg-[#16423C]" />
+              <div className="absolute top-0 right-0 w-px h-full bg-[#16423C]" />
             </div>
-            <div className="absolute -bottom-4 -left-4 w-8 h-8">
-              <div className="absolute bottom-0 left-0 w-full h-px bg-[#6A9C89]" />
-              <div className="absolute bottom-0 left-0 w-px h-full bg-[#6A9C89]" />
+            <div className="absolute -bottom-3 sm:-bottom-4 -left-3 sm:-left-4 w-6 sm:w-8 h-6 sm:h-8 hidden xs:block">
+              <div className="absolute bottom-0 left-0 w-full h-px bg-[#16423C]" />
+              <div className="absolute bottom-0 left-0 w-px h-full bg-[#16423C]" />
             </div>
 
             {/* Main image */}
             <motion.div
-              className="relative w-64 sm:w-72 md:w-80 aspect-square overflow-hidden rounded-lg"
+              className="relative w-48 xs:w-56 sm:w-64 md:w-72 lg:w-80 aspect-square overflow-hidden rounded-lg"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
@@ -265,24 +265,24 @@ function HomePage() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#E9EFEC] via-transparent to-transparent opacity-60" />
               
               {/* Green tint overlay */}
-              <div className="absolute inset-0 bg-[#6A9C89]/10 mix-blend-overlay" />
+              <div className="absolute inset-0 bg-[#16423C]/10 mix-blend-overlay" />
             </motion.div>
 
             {/* Floating label */}
             <motion.div
-              className="absolute -bottom-6 left-1/2 -translate-x-1/2 px-6 py-2 bg-white border border-[#C4DAD2] shadow-sm rounded"
+              className="absolute -bottom-4 sm:-bottom-6 left-1/2 -translate-x-1/2 px-4 sm:px-6 py-1.5 sm:py-2 bg-white border border-[#16423C]/20 shadow-sm rounded whitespace-nowrap"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1 }}
             >
-              <span className="text-xs text-[#16423C] uppercase tracking-[0.15em]">Full Stack Developer</span>
+              <span className="text-[10px] sm:text-xs text-[#16423C] uppercase tracking-[0.1em] sm:tracking-[0.15em] font-medium">Full Stack Developer</span>
             </motion.div>
           </motion.div>
         </div>
       </div>
 
       {/* Bottom line decoration */}
-      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#C4DAD2] to-transparent" />
+      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#16423C]/20 to-transparent" />
     </section>
   );
 }
