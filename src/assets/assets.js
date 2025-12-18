@@ -25,7 +25,7 @@ import arms2 from "./arms2.png"
 import arms3 from "./arm3.png" 
 import arms4 from "./arm4.png"
 import arms5 from "./arm5.png"
-// import arms6 from "./arm6.png"
+import arms6 from "./arm6.png"
 import armfront from "./armfront.png"
 
 
