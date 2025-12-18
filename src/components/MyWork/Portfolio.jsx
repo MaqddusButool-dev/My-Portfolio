@@ -4,17 +4,16 @@ import { Dialog } from "@headlessui/react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { assets } from "../../assets/assets";
 import { X } from "lucide-react";
+import { HiOutlineArrowRight } from "react-icons/hi";
 
 const projects = [
   {
     title: "Inventory Management System",
     shortDescription:
       "Built a responsive frontend for an arms steel company using Next.js and Tailwind CSS. Also contributed to backend features with Prisma and PostgreSQL under guidance.",
-    detailedDescription: `
-     From November 25, 2024, to January 2, 2025, I developed the frontend for a custom Inventory Management System tailored to an arms steel company. The focus was on creating a responsive and user-friendly interface to ensure ease of use for the company's operations. During this project, I worked closely under the mentorship of Sir Najam, where I contributed to backend development, particularly in implementing core functionalities and ensuring seamless integration with the frontend. This experience significantly enhanced my frontend development skills and provided valuable hands-on experience in backend development concepts. It also fostered collaboration and teamwork in a real-world development environment.
-     Key technologies and tools used during the project included HTML, Tailwind CSS, TypeScript, and Next.js for frontend development, and Prisma and PostgreSQL for backend contributions. I also utilized Git, Figma, and VS Code throughout the project to streamline the development process.
-    `,
+    detailedDescription: `From November 25, 2024, to January 2, 2025, I developed the frontend for a custom Inventory Management System tailored to an arms steel company. The focus was on creating a responsive and user-friendly interface to ensure ease of use for the company's operations. During this project, I worked closely under the mentorship of Sir Najam, where I contributed to backend development, particularly in implementing core functionalities and ensuring seamless integration with the frontend.`,
     image: assets.inventery_front,
+    tags: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
     screenshots: [
       assets.inventory01,
       assets.inventory05,
@@ -30,15 +29,17 @@ const projects = [
     ],
     githubUrl:
       "https://github.com/MaqddusButool-dev/ARMSSTEEL_Invetory_Management_System",
-    liveDemoUrl: "https://github.com/MaqddusButool-dev/ARMSSTEEL_Invetory_Management_System/blob/main/run_ims.bat",
+    liveDemoUrl:
+      "https://github.com/MaqddusButool-dev/ARMSSTEEL_Invetory_Management_System/blob/main/run_ims.bat",
   },
   {
     title: "Portfolio Website",
     shortDescription:
-      "Personal portfolio with Nextjs A modern and responsive personal portfolio website built with Next.js  to showcase my skills, projects, and experience.",
+      "A modern and responsive personal portfolio website built with Next.js to showcase my skills, projects, and experience.",
     detailedDescription:
-      "This project is a fully responsive and SEO-friendly personal portfolio website designed and developed using Next.js and React. It features a clean UI, smooth navigation, dark/light mode toggle, and animated transitions. The site includes sections for an about me, skills, featured projects, and a contact form. It's optimized for performance and deployable with platforms like Vercel. This portfolio not only highlights my technical skills but also serves as a platform to connect with potential collaborators and employers.",
+      "This project is a fully responsive and SEO-friendly personal portfolio website designed and developed using Next.js and React. It features a clean UI, smooth navigation, dark/light mode toggle, and animated transitions. The site includes sections for an about me, skills, featured projects, and a contact form. It's optimized for performance and deployable with platforms like Vercel.",
     image: assets.portfolio,
+    tags: ["Next.js", "React", "Tailwind CSS", "Vercel"],
     screenshots: [
       assets.portfolio1,
       assets.portfolio2,
@@ -55,8 +56,9 @@ const projects = [
     shortDescription:
       "I designed a clean and responsive website for Arms Steel Company to showcase their steel products and company profile.",
     detailedDescription:
-      "I developed a responsive and modern business website for Arms Steel Company using Next.js and TypeScript. The website is designed to professionally showcase the company’s profile and a variety of steel products. It includes a clean homepage with a company overview, a dynamic product display section, and a fully functional contact form integrated with the Gmail API for real-time message handling. Tailwind CSS was used for styling to ensure a fast and consistent UI across all devices. This project allowed me to apply my frontend and backend skills in a real-world business setting.",
+      "I developed a responsive and modern business website for Arms Steel Company using Next.js and TypeScript. The website is designed to professionally showcase the company's profile and a variety of steel products. It includes a clean homepage with a company overview, a dynamic product display section, and a fully functional contact form integrated with the Gmail API for real-time message handling.",
     image: assets.armfront,
+    tags: ["Next.js", "TypeScript", "Gmail API", "Tailwind CSS"],
     screenshots: [
       assets.arms1,
       assets.arms2,
@@ -72,162 +74,118 @@ const projects = [
 
 const Projects = () => {
   const [selectedImage, setSelectedImage] = useState(null);
-  const [showAll, setShowAll] = useState(false);
   const [activeProject, setActiveProject] = useState(null);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  const visibleProjects = showAll ? projects : projects.slice(0, 3);
-
   return (
     <>
-      <motion.section
+      <section
         ref={ref}
         id="work"
-        initial={{ opacity: 0, y: 100 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="bg-white py-20 px-4 "
+        className="relative py-24 overflow-hidden bg-[#E9EFEC]"
       >
-        <div className="max-w-6xl mx-auto text-center">
-          <motion.h1
-            className="text-5xl font-bold text-[#121212] mb-4"
-            initial={{ opacity: 0, y: -30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.1, duration: 0.6 }}
-          >
-            MY <span className="text-[#FF3B3B]">WORK</span>
-          </motion.h1>
-          <motion.h2
-            className="text-2xl text-[#E63946] mb-2 font-medium"
-            initial={{ opacity: 0, y: -20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.2, duration: 0.6 }}
-          >
-            My Latest Work
-          </motion.h2>
-          <motion.p
-            className="text-[#555] text-lg max-w-3xl mx-auto mb-12 font-medium "
-            initial={{ opacity: 0, y: -10 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.3, duration: 0.6 }}
-          >
-            Here are some of my favorite projects that I've worked on recently.
-            Click any card to explore screenshots.
-          </motion.p>
+        {/* Subtle background pattern */}
+        <div className="absolute inset-0 opacity-[0.4]">
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `radial-gradient(circle at 1px 1px, #C4DAD2 1px, transparent 0)`,
+              backgroundSize: "40px 40px",
+            }}
+          />
+        </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {visibleProjects.map((project, idx) => (
+        {/* Decorative blur */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#6A9C89]/10 rounded-full blur-3xl" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
+          {/* Section Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="w-12 h-px bg-[#6A9C89]" />
+              <span className="text-sm text-[#6A9C89] uppercase tracking-[0.2em] font-medium">
+                Portfolio
+              </span>
+              <div className="w-12 h-px bg-[#6A9C89]" />
+            </div>
+          </motion.div>
+
+          {/* Projects Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {projects.map((project, idx) => (
               <motion.div
                 key={idx}
-                onClick={() => setActiveProject(project)}
-                className="bg-[#1E1E1E] border border-[#333333] rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow cursor-pointer"
                 initial={{ opacity: 0, y: 40 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: idx * 0.2 }}
+                transition={{ duration: 0.5, delay: idx * 0.15 }}
+                className={`group relative rounded-3xl overflow-hidden bg-white border border-[#C4DAD2] hover:border-[#6A9C89]/50 hover:shadow-xl transition-all duration-500 ${
+                  idx === 0 ? "lg:col-span-2" : ""
+                }`}
               >
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-52 object-cover"
-                />
-                <div className="p-4 text-left">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="text-[#EAEAEA] text-xl font-semibold">
-                      {project.title}
-                    </h3>
-                    {/* <div className="flex gap-2">
-                      {project.githubUrl && (
-                        <a
-                          href={project.githubUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          title="GitHub Repository"
-                          onClick={(e) => e.stopPropagation()}
-                          className="flex items-center gap-1 px-3 py-1.5 bg-[#333333] text-white text-sm rounded-md hover:bg-[#444444] transition"
-                        >
-                          <FaGithub className="w-4 h-4" />
-                          GitHub
-                        </a>
-                      )}
-                      {project.liveDemoUrl && (
-                        <a
-                          href={project.liveDemoUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          title="Live Demo"
-                          onClick={(e) => e.stopPropagation()}
-                          className="flex items-center gap-1 px-3 py-1.5 bg-[#FF3B3B] text-white text-sm rounded-md hover:bg-[#e32e2e] transition"
-                        >
-                          <FaExternalLinkAlt className="w-4 h-4" />
-                          Live Demo
-                        </a>
-                      )}
-                    </div> */}
+                {/* Image Container */}
+                <div className={`relative overflow-hidden ${idx === 0 ? "h-72 md:h-96" : "h-56 md:h-64"}`}>
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
+                  
+                  {/* Hover Overlay */}
+                  <div className="absolute inset-0 bg-[#6A9C89]/0 group-hover:bg-[#6A9C89]/10 transition-all duration-500" />
+                </div>
+
+                {/* Content */}
+                <div className="p-6 md:p-8">
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tags.map((tag, i) => (
+                      <span
+                        key={i}
+                        className="px-3 py-1 text-xs text-[#16423C] bg-[#E9EFEC] border border-[#C4DAD2] rounded-full"
+                      >
+                        {tag}
+                      </span>
+                    ))}
                   </div>
 
-                  <p className="text-[#A1A1A1] text-sm">
+                  {/* Title */}
+                  <h3 className="text-xl md:text-2xl font-semibold text-[#16423C] mb-3 group-hover:text-[#6A9C89] transition-colors">
+                    {project.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-[#6A9C89] text-sm md:text-base leading-relaxed mb-6 line-clamp-2">
                     {project.shortDescription}
                   </p>
 
-                  {/* <button
-                    onClick={() => setSelectedProject(project)}
-                    className="text-sm text-[#E63946] hover:underline flex items-center gap-1 mt-3 font-Ovo"
-                  >
-                    View Project
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="w-5 h-5"
+                  {/* Actions */}
+                  <div className="flex flex-wrap items-center justify-between gap-4">
+                    <button
+                      onClick={() => setActiveProject(project)}
+                      className="flex items-center gap-2 text-[#6A9C89] font-medium text-sm hover:gap-3 transition-all"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-                      />
-                    </svg>
-                  </button> */}
-                  <div className="flex flex-wrap items-center justify-between mt-4 gap-2">
-
-                  <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setActiveProject(project); 
-                      }}
-                      className="text-sm text-[#E63946] hover:underline flex items-center gap-1 font-medium"
-                    >
-                      View Project
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={1.5}
-                        stroke="currentColor"
-                        className="w-5 h-5"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-                        />
-                      </svg>
+                      View Details
+                      <HiOutlineArrowRight className="transition-transform group-hover:translate-x-1" />
                     </button>
-                    
-                    <div className="flex gap-2">
+
+                    <div className="flex gap-3">
                       {project.githubUrl && (
                         <a
                           href={project.githubUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          title="GitHub Repository"
                           onClick={(e) => e.stopPropagation()}
-                          className="flex items-center gap-1 px-3 py-1.5 bg-[#333333] text-white text-sm rounded-md hover:bg-[#444444] transition"
+                          className="w-10 h-10 flex items-center justify-center rounded-full bg-[#E9EFEC] border border-[#C4DAD2] text-[#16423C] hover:text-[#6A9C89] hover:border-[#6A9C89]/50 hover:shadow-md transition-all"
                         >
-                          <FaGithub className="w-4 h-4" />
-                          GitHub
+                          <FaGithub className="text-lg" />
                         </a>
                       )}
                       {project.liveDemoUrl && (
@@ -235,85 +193,90 @@ const Projects = () => {
                           href={project.liveDemoUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          title="Live Demo"
                           onClick={(e) => e.stopPropagation()}
-                          className="flex items-center gap-1 px-3 py-1.5 bg-[#FF3B3B] text-white text-sm rounded-md hover:bg-[#e32e2e] transition"
+                          className="w-10 h-10 flex items-center justify-center rounded-full bg-[#6A9C89] text-white hover:bg-[#5a8a79] transition-all"
                         >
-                          <FaExternalLinkAlt className="w-4 h-4" />
-                          Live Demo
+                          <FaExternalLinkAlt className="text-sm" />
                         </a>
                       )}
                     </div>
-
-                    
                   </div>
+                </div>
+
+                {/* Corner accent */}
+                <div className="absolute top-6 right-6 w-8 h-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute top-0 right-0 w-full h-px bg-[#6A9C89]" />
+                  <div className="absolute top-0 right-0 w-px h-full bg-[#6A9C89]" />
                 </div>
               </motion.div>
             ))}
           </div>
-
-          <motion.button
-            onClick={() => setShowAll(!showAll)}
-            className="mt-10 text-[#FF3B3B] border border-[#FF3B3B] px-6 py-2 rounded-xl hover:bg-[#282828] transition-all"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.5, duration: 0.4 }}
-          >
-            {showAll ? "Show Less" : "Show More"}
-          </motion.button>
         </div>
-      </motion.section>
+      </section>
 
-      {/* Dialog for project screenshots */}
+      {/* Project Details Modal */}
       <AnimatePresence>
         {activeProject && (
           <Dialog
             open={true}
             onClose={() => setActiveProject(null)}
-            className="fixed inset-0 z-50 flex items-center justify-center"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4"
           >
             <motion.div
-              className="fixed inset-0 bg-black bg-opacity-80"
+              className="fixed inset-0 bg-[#16423C]/90 backdrop-blur-sm"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
+              onClick={() => setActiveProject(null)}
             />
 
             <motion.div
-              className="bg-[#1E1E1E] text-[#EAEAEA] rounded-xl p-6 w-full max-w-4xl max-h-[90vh] overflow-y-auto z-50"
+              className="relative bg-white border border-[#C4DAD2] rounded-3xl p-6 md:p-8 w-full max-w-4xl max-h-[90vh] overflow-y-auto z-50 shadow-2xl"
               initial={{ opacity: 0, scale: 0.95, y: 50 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 50 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="flex justify-between items-center mb-4">
-                <h2 className="text-2xl font-bold text-[#FF3B3B]">
-                  {activeProject.title}
-                </h2>
-                <motion.button
+              {/* Header */}
+              <div className="flex justify-between items-start mb-6">
+                <div>
+                  <div className="flex flex-wrap gap-2 mb-3">
+                    {activeProject.tags.map((tag, i) => (
+                      <span
+                        key={i}
+                        className="px-3 py-1 text-xs text-[#6A9C89] bg-[#6A9C89]/10 border border-[#6A9C89]/20 rounded-full"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <h2 className="text-2xl md:text-3xl font-bold text-[#16423C]">
+                    {activeProject.title}
+                  </h2>
+                </div>
+                <button
                   onClick={() => setActiveProject(null)}
-                  className="text-xl font-bold hover:text-[#E63946]"
-                  whileHover={{ rotate: 90, scale: 1.2 }}
-                  whileTap={{ scale: 0.9 }}
-                  transition={{ type: "spring", stiffness: 300 }}
+                  className="w-10 h-10 flex items-center justify-center rounded-full bg-[#E9EFEC] border border-[#C4DAD2] text-[#16423C] hover:text-[#6A9C89] hover:border-[#6A9C89]/50 transition-all"
                 >
-                  ✕
-                </motion.button>
+                  <X className="w-5 h-5" />
+                </button>
               </div>
-              <p className="text-[#A1A1A1] mb-6">
+
+              {/* Description */}
+              <p className="text-[#6A9C89] leading-relaxed mb-6">
                 {activeProject.detailedDescription}
               </p>
-              <div className="flex gap-4 mb-6">
+
+              {/* Action Buttons */}
+              <div className="flex gap-4 mb-8">
                 {activeProject.githubUrl && (
                   <a
                     href={activeProject.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm text-white bg-[#333] hover:bg-[#444] px-4 py-2 rounded-md transition-all"
+                    className="flex items-center gap-2 px-5 py-2.5 bg-[#E9EFEC] border border-[#C4DAD2] text-[#16423C] rounded-full hover:border-[#6A9C89]/50 transition-all"
                   >
-                    <FaGithub className="w-4 h-4" />
+                    <FaGithub />
                     GitHub
                   </a>
                 )}
@@ -322,69 +285,63 @@ const Projects = () => {
                     href={activeProject.liveDemoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm text-white bg-[#FF3B3B] hover:bg-[#e12c2c] px-4 py-2 rounded-md transition-all"
+                    className="flex items-center gap-2 px-5 py-2.5 bg-[#6A9C89] text-white rounded-full hover:bg-[#5a8a79] transition-all"
                   >
-                    <FaExternalLinkAlt className="w-4 h-4" />
+                    <FaExternalLinkAlt className="text-sm" />
                     Live Demo
                   </a>
                 )}
               </div>
 
-              {/* <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {activeProject.screenshots.map((src, index) => (
-                  <motion.img
-                    key={index}
-                    src={src}
-                    alt={`Screenshot ${index + 1}`}
-                    className="w-full rounded-lg border border-[#333333]"
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.1 * index, duration: 0.4 }}
-                  />
-                ))}
-              </div> */}
+              {/* Screenshots */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {activeProject.screenshots.map((src, index) => (
                   <motion.img
                     key={index}
                     src={src}
                     alt={`Screenshot ${index + 1}`}
-                    className="w-full rounded-lg border border-[#333333] cursor-pointer"
-                    initial={{ opacity: 0, y: 30 }}
+                    className="w-full rounded-xl border border-[#C4DAD2] cursor-pointer hover:border-[#6A9C89]/50 hover:shadow-lg transition-all"
+                    initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.1 * index, duration: 0.4 }}
+                    transition={{ delay: 0.05 * index, duration: 0.3 }}
                     onClick={() => setSelectedImage(src)}
                   />
                 ))}
               </div>
-
-              {/* Fullscreen Modal */}
-              <AnimatePresence>
-                {selectedImage && (
-                  <motion.div
-                    className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                  >
-                    <div className="relative max-w-4xl w-full px-4">
-                      <img
-                        src={selectedImage}
-                        alt="Full screen"
-                        className="w-full h-auto rounded-lg"
-                      />
-                      <button
-                        onClick={() => setSelectedImage(null)}
-                        className="absolute top-4 right-4 text-white bg-black/70 hover:bg-black rounded-full p-2"
-                      >
-                        <X className="w-6 h-6" />
-                      </button>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
             </motion.div>
           </Dialog>
+        )}
+      </AnimatePresence>
+
+      {/* Fullscreen Image Modal */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            className="fixed inset-0 bg-[#16423C]/95 flex items-center justify-center z-[60] p-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedImage(null)}
+          >
+            <motion.div
+              className="relative max-w-5xl w-full"
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.9 }}
+            >
+              <img
+                src={selectedImage}
+                alt="Full screen"
+                className="w-full h-auto rounded-xl shadow-2xl"
+              />
+              <button
+                onClick={() => setSelectedImage(null)}
+                className="absolute -top-12 right-0 w-10 h-10 flex items-center justify-center rounded-full bg-white border border-[#C4DAD2] text-[#16423C] hover:text-[#6A9C89] transition-all"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </motion.div>
+          </motion.div>
         )}
       </AnimatePresence>
     </>
@@ -392,211 +349,3 @@ const Projects = () => {
 };
 
 export default Projects;
-
-// import React, { useState, useRef } from "react";
-// import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-// import { Dialog } from "@headlessui/react";
-// import { motion, useInView, AnimatePresence } from "framer-motion";
-
-// const projects = [
-//   {
-//     title: "Code Summarizer",
-//     description:
-//       "AI-powered tool that summarizes code using LLaMA 3 and CodeBERT.",
-//     image: "/images/project1.png",
-//     screenshots: [
-//       "/images/project1-screen1.png",
-//       "/images/project1-screen2.png",
-//     ],
-//     githubUrl: "https://github.com/your-username/code-summarizer",
-//     liveDemoUrl: "https://code-summarizer.vercel.app",
-//   },
-//   {
-//     title: "Portfolio Website",
-//     description: "Personal portfolio built using React, TailwindCSS, and JSX.",
-//     image: "/images/project2.png",
-//     screenshots: [
-//       "/images/project2-screen1.png",
-//       "/images/project2-screen2.png",
-//     ],
-//     githubUrl: "https://github.com/your-username/portfolio",
-//     liveDemoUrl: "https://your-portfolio.vercel.app",
-//   },
-//   {
-//     title: "Task Manager",
-//     description: "A task management app with real-time collaboration.",
-//     image: "/images/project3.png",
-//     screenshots: [
-//       "/images/project3-screen1.png",
-//       "/images/project3-screen2.png",
-//     ],
-//     githubUrl: "https://github.com/your-username/task-manager",
-//     liveDemoUrl: "https://task-manager.vercel.app",
-//   },
-// ];
-
-// const Projects = () => {
-//   const [showAll, setShowAll] = useState(false);
-//   const [activeProject, setActiveProject] = useState(null);
-//   const ref = useRef(null);
-//   const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-//   const visibleProjects = showAll ? projects : projects.slice(0, 3);
-
-//   return (
-//     <>
-//       <motion.section
-//         ref={ref}
-//         id="work"
-//         initial={{ opacity: 0, y: 100 }}
-//         animate={isInView ? { opacity: 1, y: 0 } : {}}
-//         transition={{ duration: 0.8, ease: "easeOut" }}
-//         className="bg-white py-20 px-4"
-//       >
-//         <div className="max-w-6xl mx-auto text-center">
-//           <motion.h1
-//             className="text-5xl font-bold text-[#121212] mb-4"
-//             initial={{ opacity: 0, y: -30 }}
-//             animate={isInView ? { opacity: 1, y: 0 } : {}}
-//             transition={{ delay: 0.1, duration: 0.6 }}
-//           >
-//             MY <span className="text-[#FF3B3B]">WORK</span>
-//           </motion.h1>
-//           <motion.h2
-//             className="text-2xl text-[#E63946] mb-2 font-medium"
-//             initial={{ opacity: 0, y: -20 }}
-//             animate={isInView ? { opacity: 1, y: 0 } : {}}
-//             transition={{ delay: 0.2, duration: 0.6 }}
-//           >
-//             My Latest Work
-//           </motion.h2>
-//           <motion.p
-//             className="text-[#555] text-lg max-w-3xl mx-auto mb-12 font-medium "
-//             initial={{ opacity: 0, y: -10 }}
-//             animate={isInView ? { opacity: 1, y: 0 } : {}}
-//             transition={{ delay: 0.3, duration: 0.6 }}
-//           >
-//             Here are some of my favorite projects that I've worked on recently.
-//             Click any card to explore screenshots.
-//           </motion.p>
-
-//           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-//             {visibleProjects.map((project, idx) => (
-//               <motion.div
-//                 key={idx}
-//                 onClick={() => setActiveProject(project)}
-//                 className="bg-[#1E1E1E] border border-[#333333] rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow cursor-pointer"
-//                 initial={{ opacity: 0, y: 40 }}
-//                 animate={isInView ? { opacity: 1, y: 0 } : {}}
-//                 transition={{ duration: 0.5, delay: idx * 0.2 }}
-//               >
-//                 <img
-//                   src={project.image}
-//                   alt={project.title}
-//                   className="w-full h-52 object-cover"
-//                 />
-//                 <div className="p-4 text-left">
-//                   <div className="flex items-center justify-between mb-2">
-//                     <h3 className="text-[#EAEAEA] text-xl font-semibold">
-//                       {project.title}
-//                     </h3>
-//                     <div className="flex gap-3 text-[#FF3B3B] text-lg">
-//                       <a
-//                         href={project.liveDemoUrl}
-//                         onClick={(e) => e.stopPropagation()}
-//                         target="_blank"
-//                         rel="noopener noreferrer"
-//                       >
-//                         <FaExternalLinkAlt />
-//                       </a>
-//                       <a
-//                         href={project.githubUrl}
-//                         onClick={(e) => e.stopPropagation()}
-//                         target="_blank"
-//                         rel="noopener noreferrer"
-//                       >
-//                         <FaGithub />
-//                       </a>
-//                     </div>
-//                   </div>
-//                   <p className="text-[#A1A1A1] text-sm">
-//                     {project.description}
-//                   </p>
-//                 </div>
-//               </motion.div>
-//             ))}
-//           </div>
-
-//           <motion.button
-//             onClick={() => setShowAll(!showAll)}
-//             className="mt-10 text-[#FF3B3B] border border-[#FF3B3B] px-6 py-2 rounded-xl hover:bg-[#282828] transition-all"
-//             whileHover={{ scale: 1.05 }}
-//             whileTap={{ scale: 0.95 }}
-//             initial={{ opacity: 0, y: 20 }}
-//             animate={isInView ? { opacity: 1, y: 0 } : {}}
-//             transition={{ delay: 0.5, duration: 0.4 }}
-//           >
-//             {showAll ? "Show Less" : "Show More"}
-//           </motion.button>
-//         </div>
-//       </motion.section>
-
-//       {/* Dialog for project screenshots */}
-//       <AnimatePresence>
-//         {activeProject && (
-//           <Dialog
-//             open={true}
-//             onClose={() => setActiveProject(null)}
-//             className="fixed inset-0 z-50 flex items-center justify-center"
-//           >
-//             <motion.div
-//               className="fixed inset-0 bg-black bg-opacity-80"
-//               initial={{ opacity: 0 }}
-//               animate={{ opacity: 1 }}
-//               exit={{ opacity: 0 }}
-//             />
-
-//             <motion.div
-//               className="bg-[#1E1E1E] text-[#EAEAEA] rounded-xl p-6 w-full max-w-4xl max-h-[90vh] overflow-y-auto z-50"
-//               initial={{ opacity: 0, scale: 0.95, y: 50 }}
-//               animate={{ opacity: 1, scale: 1, y: 0 }}
-//               exit={{ opacity: 0, scale: 0.95, y: 50 }}
-//               transition={{ duration: 0.3 }}
-//             >
-//               <div className="flex justify-between items-center mb-4">
-//                 <h2 className="text-2xl font-bold text-[#FF3B3B]">{activeProject.title}</h2>
-//                 <motion.button
-//                   onClick={() => setActiveProject(null)}
-//                   className="text-xl font-bold hover:text-[#E63946]"
-//                   whileHover={{ rotate: 90, scale: 1.2 }}
-//                   whileTap={{ scale: 0.9 }}
-//                   transition={{ type: "spring", stiffness: 300 }}
-//                 >
-//                   ✕
-//                 </motion.button>
-//               </div>
-//               <p className="text-[#A1A1A1] mb-6">{activeProject.description}</p>
-
-//               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-//                 {activeProject.screenshots.map((src, index) => (
-//                   <motion.img
-//                     key={index}
-//                     src={src}
-//                     alt={`Screenshot ${index + 1}`}
-//                     className="w-full rounded-lg border border-[#333333]"
-//                     initial={{ opacity: 0, y: 30 }}
-//                     animate={{ opacity: 1, y: 0 }}
-//                     transition={{ delay: 0.1 * index, duration: 0.4 }}
-//                   />
-//                 ))}
-//               </div>
-//             </motion.div>
-//           </Dialog>
-//         )}
-//       </AnimatePresence>
-
-//     </>
-//   );
-// };
-
-// export default Projects;
