@@ -6,9 +6,8 @@ import { assets } from "../../assets/assets";
 
 const roles = [
   "Full Stack Developer",
-  "Frontend Engineer",
+  "Frontend Developer",
   "Backend Developer",
-  "Python Developer",
 ];
 
 // Typing effect with cursor
